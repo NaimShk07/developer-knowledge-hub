@@ -1,0 +1,9 @@
+{
+  "name": "nodejs-event-loop-demo",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Experiment testing Node.js event loop phase priorities",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
