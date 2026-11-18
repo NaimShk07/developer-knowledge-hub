@@ -18,6 +18,7 @@ A beginner-friendly guide to core Node.js concepts, written in simple and short 
 
 | # | Topic | File | What You Learn |
 | :- | :--- | :--- | :--- |
+| 0 | **Sync vs Async & Blocking vs Non-Blocking** | [00-sync-async-blocking-nonblocking.md](00-sync-async-blocking-nonblocking.md) | The mental model of waiting vs delegating, and avoiding thread starvation. |
 | 1 | **Event Loop & Architecture** | [01-event-loop-and-architecture.md](01-event-loop-and-architecture.md) | How Node handles thousands of requests on a single thread. |
 | 2 | **Async Patterns** | [02-async-patterns.md](02-async-patterns.md) | Callbacks, Promises, and modern `async/await` best practices. |
 | 3 | **Streams & Buffers** | [03-streams-and-buffers.md](03-streams-and-buffers.md) | Handling huge files and data chunks without crashing memory. |

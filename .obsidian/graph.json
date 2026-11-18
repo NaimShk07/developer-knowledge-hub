@@ -5,8 +5,37 @@
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": true,
-  "colorGroups": [],
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:Learning  ",
+      "color": {
+        "a": 1,
+        "rgb": 5407200
+      }
+    },
+    {
+      "query": "path:Interview-Prep  ",
+      "color": {
+        "a": 1,
+        "rgb": 12210912
+      }
+    },
+    {
+      "query": "path:Notes  ",
+      "color": {
+        "a": 1,
+        "rgb": 2883328
+      }
+    },
+    {
+      "query": "path:Sandbox  ",
+      "color": {
+        "a": 1,
+        "rgb": 15358234
+      }
+    }
+  ],
   "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": 0,
@@ -17,6 +46,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 1.0538272817293393,
-  "close": false
+  "scale": 0.9973524922786392,
+  "close": true
 }

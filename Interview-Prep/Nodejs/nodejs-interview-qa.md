@@ -89,3 +89,23 @@ fs.readFile('data.txt', () => {
 1. **Never Just Ignore:** Catching `uncaughtException` and continuing to serve traffic is dangerous because memory or database sockets may be leaked or corrupted.
 2. **Graceful Shutdown:** Stop accepting new requests (`server.close()`), wait for in-flight requests to complete, and exit within a timeout.
 3. **Modern Node Behavior:** Modern Node.js versions crash by default on unhandled promise rejections (`--unhandled-rejections=throw`).
+
+---
+
+### Q6: What is the difference between Synchronous vs Asynchronous, and Blocking vs Non-Blocking in Node.js?
+`[Level: Junior-Mid]` `[Frequency: Very High]`
+
+- **Related Learning Note:** [00-sync-async-blocking-nonblocking.md](../../Learning/Nodejs/00-sync-async-blocking-nonblocking.md)
+
+#### 30-Second Spoken Answer
+> "Synchronous versus asynchronous refers to the **order of execution**—synchronous code runs sequentially in line order, while asynchronous code initiates an operation and allows the program to continue before that operation completes. Blocking versus non-blocking refers to **what happens to the thread**—blocking code occupies the call stack so no other JavaScript can run, while non-blocking code yields control immediately so the server can handle other concurrent requests."
+
+#### Key Points to Mention
+1. **The Single-Thread Trap:** Because Node.js has only one main thread for your JavaScript, executing a blocking function (like `fs.readFileSync` or an infinite loop) freezes the entire server for every user.
+2. **Beyond File I/O:** Blocking isn't just disk reads; heavy synchronous CPU calculations (like large `JSON.parse` operations or complex regular expressions) also block the Event Loop.
+3. **Non-Blocking with Libuv:** Asynchronous non-blocking I/O delegates work to the kernel or Libuv thread pool, freeing the call stack to process other incoming HTTP connections.
+
+#### Common Follow-Up Questions
+- *"Are all asynchronous operations non-blocking?"* → In Node.js, asynchronous I/O is non-blocking. However, if an asynchronous callback contains heavy CPU work, executing that callback will still block the event loop while it runs.
+- *"When is synchronous code acceptable in Node.js?"* → During application startup (e.g., loading config files before the HTTP server starts listening for traffic).
+
