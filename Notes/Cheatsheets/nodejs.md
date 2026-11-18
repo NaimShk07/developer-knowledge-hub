@@ -1,7 +1,7 @@
 # Node.js Cheatsheet
 
 > Quick reference for everyday Node.js CLI commands, flags, built-in modules, and snippets.  
-> **Deep Dive:** [Learning/Nodejs/](file:///Users/nayemuddinshaikh/Developer/Learning/Nodejs/README.md) | **Interview Q&A:** [Node.js Interview Q&A](file:///Users/nayemuddinshaikh/Developer/Interview-Prep/Nodejs/nodejs-interview-qa.md)
+> **Deep Dive:** [Learning/Nodejs/](../../Learning/Nodejs/README.md) | **Interview Q&A:** [Node.js Interview Q&A](../../Interview-Prep/Nodejs/nodejs-interview-qa.md)
 
 ---
 

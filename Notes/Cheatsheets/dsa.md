@@ -1,7 +1,7 @@
 # Data Structures & Algorithms (DSA) Cheatsheet
 
 > Rapid pattern matching, Big-O complexity tables, and JavaScript/TypeScript gotchas.
-> **Deep Dive:** [Learning/DSA/](file:///Users/nayemuddinshaikh/Developer/Learning/DSA/README.md) | **Interview Q&A:** [Interview-Prep/DSA/](file:///Users/nayemuddinshaikh/Developer/Interview-Prep/DSA/two-pointers-interview-qa.md)
+> **Deep Dive:** [Learning/DSA/](../../Learning/DSA/README.md) | **Interview Q&A:** [Interview-Prep/DSA/](../../Interview-Prep/DSA/two-pointers-interview-qa.md)
 
 ---
 

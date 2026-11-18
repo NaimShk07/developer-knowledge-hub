@@ -1,7 +1,7 @@
 # Redis Cheatsheet
 
 > Quick reference for everyday Redis CLI commands and data structure operations.  
-> **Deep Dive:** [Learning/Redis/](file:///Users/nayemuddinshaikh/Developer/Learning/Redis/README.md) | **Interview Q&A:** [Redis Interview Q&A](file:///Users/nayemuddinshaikh/Developer/Interview-Prep/Redis/redis-interview-qa.md)
+> **Deep Dive:** [Learning/Redis/](../../Learning/Redis/README.md) | **Interview Q&A:** [Redis Interview Q&A](../../Interview-Prep/Redis/redis-interview-qa.md)
 
 ---
 

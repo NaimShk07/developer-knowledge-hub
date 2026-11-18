@@ -7,8 +7,8 @@ High-frequency interview problems using the Two Pointers pattern, structured wit
 ### Q1: Two Sum II - Input Array Is Sorted
 `[Level: Junior]` `[Frequency: Very High]`
 
-- **Related Learning Note:** [01-two-pointers.md](file:///Users/nayemuddinshaikh/Developer/Learning/DSA/01-two-pointers.md)
-- **Hands-on Experiment:** [Sandbox/dsa-two-pointers/](file:///Users/nayemuddinshaikh/Developer/Sandbox/dsa-two-pointers/README.md)
+- **Related Learning Note:** [01-two-pointers.md](../../Learning/DSA/01-two-pointers.md)
+- **Hands-on Experiment:** [Sandbox/dsa-two-pointers/](../../Sandbox/dsa-two-pointers/README.md)
 
 #### 1. Clarifying Questions to Ask
 - *"Is the array strictly sorted in ascending order?"* (Confirms Two Pointers works).
@@ -51,8 +51,8 @@ function twoSum(numbers: number[], target: number): number[] {
 ### Q2: 3Sum - Finding Unique Triplets
 `[Level: Mid]` `[Frequency: Very High]`
 
-- **Related Learning Note:** [01-two-pointers.md](file:///Users/nayemuddinshaikh/Developer/Learning/DSA/01-two-pointers.md)
-- **Hands-on Experiment:** [Sandbox/dsa-two-pointers/](file:///Users/nayemuddinshaikh/Developer/Sandbox/dsa-two-pointers/README.md)
+- **Related Learning Note:** [01-two-pointers.md](../../Learning/DSA/01-two-pointers.md)
+- **Hands-on Experiment:** [Sandbox/dsa-two-pointers/](../../Sandbox/dsa-two-pointers/README.md)
 
 #### 1. Clarifying Questions to Ask
 - *"Can the triplets contain duplicate values across different index combinations?"* (No, output must contain unique triplets).
@@ -106,7 +106,7 @@ function threeSum(nums: number[]): number[][] {
 ### Q3: Container With Most Water
 `[Level: Mid]` `[Frequency: Very High]`
 
-- **Related Learning Note:** [01-two-pointers.md](file:///Users/nayemuddinshaikh/Developer/Learning/DSA/01-two-pointers.md)
+- **Related Learning Note:** [01-two-pointers.md](../../Learning/DSA/01-two-pointers.md)
 
 #### 1. 30-Second Spoken Answer
 > "We place pointers at the leftmost and rightmost boundaries to maximize width. The water area is limited by the shorter line: `(right - left) * min(height[left], height[right])`. To find a larger area, we must always move the pointer pointing to the shorter line inward, because keeping the shorter line while decreasing width can never yield more water."

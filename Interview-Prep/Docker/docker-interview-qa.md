@@ -7,7 +7,7 @@ High-frequency Docker interview questions with crisp 30-second spoken answers an
 ### Q1: What is the difference between a Docker Image and a Container?
 `[Level: Junior]` `[Frequency: Very High]`
 
-- **Related Learning Note:** [01-images-and-containers.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/01-images-and-containers.md)
+- **Related Learning Note:** [01-images-and-containers.md](../../Learning/Docker/01-images-and-containers.md)
 
 #### 30-Second Spoken Answer
 > "A Docker Image is an immutable, read-only template containing the application code, runtime, and system dependencies. A Docker Container is a running, isolated instance created from that image, with a thin writable layer on top."
@@ -33,7 +33,7 @@ docker run -d --name web-2 nginx
 ### Q2: How does `RUN` differ from `CMD` and `ENTRYPOINT` in a Dockerfile?
 `[Level: Mid]` `[Frequency: Very High]`
 
-- **Related Learning Note:** [02-dockerfile.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/02-dockerfile.md)
+- **Related Learning Note:** [02-dockerfile.md](../../Learning/Docker/02-dockerfile.md)
 
 #### 30-Second Spoken Answer
 > "`RUN` executes during the image build stage to install packages and build layers. `CMD` provides the default command executed when the container starts up and can be overridden from the CLI. `ENTRYPOINT` configures the primary executable that is always run and cannot easily be overridden."
@@ -60,7 +60,7 @@ CMD ["server.js"]
 ### Q3: What is the difference between a Volume and a Bind Mount?
 `[Level: Mid]` `[Frequency: High]`
 
-- **Related Learning Note:** [04-volumes.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/04-volumes.md)
+- **Related Learning Note:** [04-volumes.md](../../Learning/Docker/04-volumes.md)
 
 #### 30-Second Spoken Answer
 > "A Volume is completely managed by Docker inside Docker's dedicated storage directory, making it portable and secure for databases. A Bind Mount mounts any arbitrary file or folder from the host file system directly into the container, which is ideal for hot-reloading code during local development."
@@ -84,7 +84,7 @@ docker run -v $(pwd):/app -w /app node:20-alpine npm run dev
 ### Q4: How do containers communicate with each other on the same host?
 `[Level: Mid-Senior]` `[Frequency: High]`
 
-- **Related Learning Note:** [03-ports-and-networking.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/03-ports-and-networking.md)
+- **Related Learning Note:** [03-ports-and-networking.md](../../Learning/Docker/03-ports-and-networking.md)
 
 #### 30-Second Spoken Answer
 > "By default, containers can talk to each other if attached to the same custom user-defined bridge network. Docker provides automatic internal DNS, so containers can resolve and reach each other directly using their container or service names without exposing ports to the host."
@@ -99,7 +99,7 @@ docker run -v $(pwd):/app -w /app node:20-alpine npm run dev
 ### Q5: What is Docker Compose and when should you use it?
 `[Level: Junior-Mid]` `[Frequency: High]`
 
-- **Related Learning Note:** [05-docker-compose.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/05-docker-compose.md)
+- **Related Learning Note:** [05-docker-compose.md](../../Learning/Docker/05-docker-compose.md)
 
 #### 30-Second Spoken Answer
 > "Docker Compose is an orchestration tool for defining and running multi-container applications using a declarative YAML file. It allows you to configure services, networks, and volumes in one place and spin up the entire application stack with a single `docker compose up` command."
@@ -114,7 +114,7 @@ docker run -v $(pwd):/app -w /app node:20-alpine npm run dev
 ### Q6: How does a Docker Container differ from a Virtual Machine?
 `[Level: Junior-Mid]` `[Frequency: Very High]`
 
-- **Related Learning Note:** [00-containers-vs-virtual-machines.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/00-containers-vs-virtual-machines.md)
+- **Related Learning Note:** [00-containers-vs-virtual-machines.md](../../Learning/Docker/00-containers-vs-virtual-machines.md)
 
 #### 30-Second Spoken Answer
 > "Virtual Machines virtualize physical hardware through a hypervisor, requiring each VM to boot a complete, separate guest operating system. Containers virtualize at the operating system level, sharing the host Linux kernel while isolating processes via namespaces and cgroups, making them start in milliseconds and consume drastically less memory."
@@ -132,7 +132,7 @@ docker run -v $(pwd):/app -w /app node:20-alpine npm run dev
 ### Q7: What is the difference between `ARG` and `ENV`, and how should you pass production secrets?
 `[Level: Mid-Senior]` `[Frequency: Very High]`
 
-- **Related Learning Note:** [06-environment-variables-and-secrets.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/06-environment-variables-and-secrets.md)
+- **Related Learning Note:** [06-environment-variables-and-secrets.md](../../Learning/Docker/06-environment-variables-and-secrets.md)
 
 #### 30-Second Spoken Answer
 > "`ARG` defines a build-time variable that only exists while the image is being built and is not accessible inside running containers. `ENV` defines a runtime variable that persists inside the container. Production secrets should never be placed in `ARG` or baked into a `Dockerfile`, but should instead be injected at runtime using `-e`, `--env-file`, or a secret manager."

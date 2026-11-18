@@ -19,10 +19,10 @@ Every question in this hub is designed with a **30-Second Spoken Answer** follow
 
 | Topic | Interview Questions | Deep-Dive Learning Notes | Difficulty |
 | :--- | :--- | :--- | :--- |
-| **DSA (Two Pointers)** | [Two Pointers Q&A](file:///Users/nayemuddinshaikh/Developer/Interview-Prep/DSA/two-pointers-interview-qa.md) | [Learning/DSA/](file:///Users/nayemuddinshaikh/Developer/Learning/DSA/README.md) | Junior to Senior |
-| **Node.js** | [Node.js Q&A](file:///Users/nayemuddinshaikh/Developer/Interview-Prep/Nodejs/nodejs-interview-qa.md) | [Learning/Nodejs/](file:///Users/nayemuddinshaikh/Developer/Learning/Nodejs/README.md) | Junior to Senior |
-| **Docker** | [Docker Q&A](file:///Users/nayemuddinshaikh/Developer/Interview-Prep/Docker/docker-interview-qa.md) | [Learning/Docker/](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/README.md) | Junior to Senior |
-| **Redis** | [Redis Q&A](file:///Users/nayemuddinshaikh/Developer/Interview-Prep/Redis/redis-interview-qa.md) | [Learning/Redis/](file:///Users/nayemuddinshaikh/Developer/Learning/Redis/README.md) | Mid to Senior |
+| **DSA (Two Pointers)** | [Two Pointers Q&A](DSA/two-pointers-interview-qa.md) | [Learning/DSA/](../Learning/DSA/README.md) | Junior to Senior |
+| **Node.js** | [Node.js Q&A](Nodejs/nodejs-interview-qa.md) | [Learning/Nodejs/](../Learning/Nodejs/README.md) | Junior to Senior |
+| **Docker** | [Docker Q&A](Docker/docker-interview-qa.md) | [Learning/Docker/](../Learning/Docker/README.md) | Junior to Senior |
+| **Redis** | [Redis Q&A](Redis/redis-interview-qa.md) | [Learning/Redis/](../Learning/Redis/README.md) | Mid to Senior |
 | **System Design** | *Coming Soon* | — | Mid to Staff |
 | **Behavioral** | *Coming Soon* | — | All levels |
 

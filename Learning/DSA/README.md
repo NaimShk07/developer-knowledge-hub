@@ -13,7 +13,7 @@ There are thousands of LeetCode problems, but almost all of them map to **14 cor
 
 | Phase | # | Pattern | File | Core Data Structures | Canonical Problems |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Phase 1: Linear Arrays & Strings** | 1 | **Two Pointers** | [01-two-pointers.md](file:///Users/nayemuddinshaikh/Developer/Learning/DSA/01-two-pointers.md) | Array, String | Two Sum II (Sorted), Valid Palindrome, 3Sum, Container With Most Water |
+| **Phase 1: Linear Arrays & Strings** | 1 | **Two Pointers** | [01-two-pointers.md](01-two-pointers.md) | Array, String | Two Sum II (Sorted), Valid Palindrome, 3Sum, Container With Most Water |
 | | 2 | **Sliding Window** | *Coming Soon* | Array, String, Map | Longest Substring Without Repeating Characters, Min Size Subarray Sum |
 | | 3 | **Prefix Sum** | *Coming Soon* | Array, Map | Subarray Sum Equals K, Product of Array Except Self |
 | | 4 | **Fast & Slow Pointers** | *Coming Soon* | Linked List, Array | Linked List Cycle, Middle of the Linked List, Happy Number |
@@ -44,6 +44,6 @@ flowchart LR
 ---
 
 ## Related Hubs
-- **Cheatsheet:** [Notes/Cheatsheets/dsa.md](file:///Users/nayemuddinshaikh/Developer/Notes/Cheatsheets/dsa.md)
-- **Hands-on Experiment:** [Sandbox/dsa-two-pointers/](file:///Users/nayemuddinshaikh/Developer/Sandbox/dsa-two-pointers/README.md)
-- **Interview Q&A:** [Interview-Prep/DSA/two-pointers-interview-qa.md](file:///Users/nayemuddinshaikh/Developer/Interview-Prep/DSA/two-pointers-interview-qa.md)
+- **Cheatsheet:** [Notes/Cheatsheets/dsa.md](../../Notes/Cheatsheets/dsa.md)
+- **Hands-on Experiment:** [Sandbox/dsa-two-pointers/](../../Sandbox/dsa-two-pointers/README.md)
+- **Interview Q&A:** [Interview-Prep/DSA/two-pointers-interview-qa.md](../../Interview-Prep/DSA/two-pointers-interview-qa.md)

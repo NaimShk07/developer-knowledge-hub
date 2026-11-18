@@ -142,6 +142,6 @@ function threeSum(nums: number[]): number[][] {
 ---
 
 ## Related Hubs
-- **Cheatsheet:** [Notes/Cheatsheets/dsa.md](file:///Users/nayemuddinshaikh/Developer/Notes/Cheatsheets/dsa.md)
-- **Hands-on Experiment:** [Sandbox/dsa-two-pointers/](file:///Users/nayemuddinshaikh/Developer/Sandbox/dsa-two-pointers/README.md)
-- **Interview Q&A:** [Interview-Prep/DSA/two-pointers-interview-qa.md](file:///Users/nayemuddinshaikh/Developer/Interview-Prep/DSA/two-pointers-interview-qa.md)
+- **Cheatsheet:** [Notes/Cheatsheets/dsa.md](../../Notes/Cheatsheets/dsa.md)
+- **Hands-on Experiment:** [Sandbox/dsa-two-pointers/](../../Sandbox/dsa-two-pointers/README.md)
+- **Interview Q&A:** [Interview-Prep/DSA/two-pointers-interview-qa.md](../../Interview-Prep/DSA/two-pointers-interview-qa.md)

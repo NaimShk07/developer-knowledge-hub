@@ -9,7 +9,7 @@ Notes are for instant recall. When a developer opens a file in `Notes/`, they sh
 ---
 
 ## 1. Cross-Referencing Rule
-- Every cheatsheet or note file in `Notes/` should link back to the deep-dive concept note in `Learning/` (e.g., `[Learning/Docker/](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/README.md)`).
+- Every cheatsheet or note file in `Notes/` should link back to the deep-dive concept note in `Learning/` (e.g., `[Learning/Docker/](../../Learning/Docker/README.md)`).
 - If relevant, link to the interview questions in `Interview-Prep/`.
 
 ---

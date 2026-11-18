@@ -1,7 +1,7 @@
 # Learning Directory Guidelines
 
 All notes and explanations in this folder must follow the workspace rule:
-[learning-notes.md](file:///Users/nayemuddinshaikh/Developer/.agents/rules/learning-notes.md)
+[learning-notes.md](../.agents/rules/learning-notes.md)
 
 ## Summary of Rules
 - **Simple English**: Use plain, everyday language. No unnecessary jargon.

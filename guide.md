@@ -164,10 +164,10 @@ flowchart LR
 
 | Folder | Focus | Agent Rule | Primary Hub |
 | :--- | :--- | :--- | :--- |
-| **`Learning/`** | Concept deep dives in plain English | [learning-notes.md](file:///Users/nayemuddinshaikh/Developer/.agents/rules/learning-notes.md) | [Learning/README.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/README.md) |
-| **`Sandbox/`** | Minimal runnable spikes & prototypes | [sandbox.md](file:///Users/nayemuddinshaikh/Developer/.agents/rules/sandbox.md) | [Sandbox/README.md](file:///Users/nayemuddinshaikh/Developer/Sandbox/README.md) |
-| **`Notes/`** | Fast 3-second cheatsheets & commands | [notes.md](file:///Users/nayemuddinshaikh/Developer/.agents/rules/notes.md) | [Notes/README.md](file:///Users/nayemuddinshaikh/Developer/Notes/README.md) |
-| **`Interview-Prep/`** | 30s spoken answers & technical Q&A | [interview-prep.md](file:///Users/nayemuddinshaikh/Developer/.agents/rules/interview-prep.md) | [Interview-Prep/README.md](file:///Users/nayemuddinshaikh/Developer/Interview-Prep/README.md) |
+| **`Learning/`** | Concept deep dives in plain English | [learning-notes.md](.agents/rules/learning-notes.md) | [Learning/README.md](Learning/Docker/README.md) |
+| **`Sandbox/`** | Minimal runnable spikes & prototypes | [sandbox.md](.agents/rules/sandbox.md) | [Sandbox/README.md](Sandbox/README.md) |
+| **`Notes/`** | Fast 3-second cheatsheets & commands | [notes.md](.agents/rules/notes.md) | [Notes/README.md](Notes/README.md) |
+| **`Interview-Prep/`** | 30s spoken answers & technical Q&A | [interview-prep.md](.agents/rules/interview-prep.md) | [Interview-Prep/README.md](Interview-Prep/README.md) |
 
 *(Note: `Projects/` remains independent for standalone, production-ready code repositories.)*
 

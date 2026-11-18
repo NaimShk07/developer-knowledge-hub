@@ -10,7 +10,7 @@ Every experiment in `Sandbox/` must be minimal, self-contained, and runnable wit
 
 ## 1. Cross-Referencing Rule
 - Every sandbox experiment folder must contain a `README.md`.
-- The `README.md` must link back to the concept being tested in `Learning/` (e.g., `[Learning/Docker/04-volumes.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/04-volumes.md)`).
+- The `README.md` must link back to the concept being tested in `Learning/` (e.g., `[Learning/Docker/04-volumes.md](../../Learning/Docker/04-volumes.md)`).
 - Document any real gotchas or edge cases discovered during the experiment so they can be referenced in `Interview-Prep/`.
 
 ---

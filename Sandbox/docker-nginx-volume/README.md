@@ -1,6 +1,6 @@
 # Experiment: Docker Nginx Bind Mount & Live Editing
 
-> **Concept Tested:** [Learning/Docker/04-volumes.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/04-volumes.md) & [Learning/Docker/03-ports-and-networking.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/03-ports-and-networking.md)
+> **Concept Tested:** [Learning/Docker/04-volumes.md](../../Learning/Docker/04-volumes.md) & [Learning/Docker/03-ports-and-networking.md](../../Learning/Docker/03-ports-and-networking.md)
 
 ## Objective
 Verify that modifying an HTML file on the host computer instantly updates inside a running container without rebuilding the image or restarting the container.

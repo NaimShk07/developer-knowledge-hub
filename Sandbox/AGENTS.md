@@ -1,7 +1,7 @@
 # Sandbox Directory Guidelines
 
 All experiments, prototypes, and code spikes in this folder must follow:
-[sandbox.md](file:///Users/nayemuddinshaikh/Developer/.agents/rules/sandbox.md)
+[sandbox.md](../.agents/rules/sandbox.md)
 
 ## Summary of Rules
 - **Self-Contained**: Every experiment gets its own folder with a single-command run procedure.

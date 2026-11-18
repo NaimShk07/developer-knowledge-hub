@@ -10,7 +10,7 @@ Answers must be concise, structured, and easy to speak out loud in an actual tec
 
 ## 1. Cross-Referencing Rule
 Whenever a question relates to a concept already documented in the `Learning/` folder:
-- **Always provide a clickable link** to the relevant note (e.g., `[Learning/Docker/01-images-and-containers.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/01-images-and-containers.md)`).
+- **Always provide a clickable link** to the relevant note (e.g., `[Learning/Docker/01-images-and-containers.md](../../Learning/Docker/01-images-and-containers.md)`).
 - This keeps interview answers focused on **how to answer**, while referencing **deep dive notes** for full background.
 
 ---

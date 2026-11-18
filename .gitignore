@@ -50,6 +50,12 @@ redis_data/
 *.swp
 *.swo
 
+# Obsidian Vault Caches (keep workspace transient out of git)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.obsidian/backlinks/
+
 # Standalone Projects
 # (Each project inside Projects/ maintains its own independent git repo)
 Projects/*

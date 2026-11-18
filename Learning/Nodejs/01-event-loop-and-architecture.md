@@ -57,7 +57,7 @@ console.log("1.5. Synchronous end");
 4. Timer callback (Macrotask)
 ```
 
-> **Try this live:** Run the complete experiment in [Sandbox/nodejs-event-loop-demo/](file:///Users/nayemuddinshaikh/Developer/Sandbox/nodejs-event-loop-demo/README.md).
+> **Try this live:** Run the complete experiment in [Sandbox/nodejs-event-loop-demo/](../../Sandbox/nodejs-event-loop-demo/README.md).
 
 ---
 

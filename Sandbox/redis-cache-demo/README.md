@@ -1,6 +1,6 @@
 # Experiment: Redis Caching & TTL Expiration
 
-> **Concept Tested:** [Learning/Redis/03-caching-and-ttl.md](file:///Users/nayemuddinshaikh/Developer/Learning/Redis/03-caching-and-ttl.md)
+> **Concept Tested:** [Learning/Redis/03-caching-and-ttl.md](../../Learning/Redis/03-caching-and-ttl.md)
 
 ## Objective
 Verify how keys automatically expire using `EX` (TTL) and see the Cache-Aside pattern in action.

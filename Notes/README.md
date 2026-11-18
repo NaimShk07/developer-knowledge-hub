@@ -14,10 +14,10 @@ While the `Learning/` folder explains concepts in depth, the `Notes/` folder is 
 
 | Technology | Cheatsheet | Deep-Dive Concept | Interview Questions |
 | :--- | :--- | :--- | :--- |
-| **DSA (JS/TS)** | [dsa.md](file:///Users/nayemuddinshaikh/Developer/Notes/Cheatsheets/dsa.md) | [Learning/DSA/](file:///Users/nayemuddinshaikh/Developer/Learning/DSA/README.md) | [DSA Q&A](file:///Users/nayemuddinshaikh/Developer/Interview-Prep/DSA/two-pointers-interview-qa.md) |
-| **Node.js** | [nodejs.md](file:///Users/nayemuddinshaikh/Developer/Notes/Cheatsheets/nodejs.md) | [Learning/Nodejs/](file:///Users/nayemuddinshaikh/Developer/Learning/Nodejs/README.md) | [Node.js Q&A](file:///Users/nayemuddinshaikh/Developer/Interview-Prep/Nodejs/nodejs-interview-qa.md) |
-| **Docker** | [docker.md](file:///Users/nayemuddinshaikh/Developer/Notes/Cheatsheets/docker.md) | [Learning/Docker/](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/README.md) | [Docker Q&A](file:///Users/nayemuddinshaikh/Developer/Interview-Prep/Docker/docker-interview-qa.md) |
-| **Redis** | [redis.md](file:///Users/nayemuddinshaikh/Developer/Notes/Cheatsheets/redis.md) | [Learning/Redis/](file:///Users/nayemuddinshaikh/Developer/Learning/Redis/README.md) | [Redis Q&A](file:///Users/nayemuddinshaikh/Developer/Interview-Prep/Redis/redis-interview-qa.md) |
+| **DSA (JS/TS)** | [dsa.md](Cheatsheets/dsa.md) | [Learning/DSA/](../Learning/DSA/README.md) | [DSA Q&A](../Interview-Prep/DSA/two-pointers-interview-qa.md) |
+| **Node.js** | [nodejs.md](Cheatsheets/nodejs.md) | [Learning/Nodejs/](../Learning/Nodejs/README.md) | [Node.js Q&A](../Interview-Prep/Nodejs/nodejs-interview-qa.md) |
+| **Docker** | [docker.md](Cheatsheets/docker.md) | [Learning/Docker/](../Learning/Docker/README.md) | [Docker Q&A](../Interview-Prep/Docker/docker-interview-qa.md) |
+| **Redis** | [redis.md](Cheatsheets/redis.md) | [Learning/Redis/](../Learning/Redis/README.md) | [Redis Q&A](../Interview-Prep/Redis/redis-interview-qa.md) |
 | **Git** | *Coming Soon* | — | — |
 | **Terminal & Linux** | *Coming Soon* | — | — |
 

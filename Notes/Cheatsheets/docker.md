@@ -1,7 +1,7 @@
 # Docker & Compose Cheatsheet
 
 > Quick reference for everyday Docker commands, options, and Compose syntax.  
-> **Deep Dive:** [Learning/Docker/](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/README.md) | **Interview Q&A:** [Docker Interview Q&A](file:///Users/nayemuddinshaikh/Developer/Interview-Prep/Docker/docker-interview-qa.md)
+> **Deep Dive:** [Learning/Docker/](../../Learning/Docker/README.md) | **Interview Q&A:** [Docker Interview Q&A](../../Interview-Prep/Docker/docker-interview-qa.md)
 
 ---
 

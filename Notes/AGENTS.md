@@ -1,7 +1,7 @@
 # Notes Directory Guidelines
 
 All reference sheets, command lookups, and troubleshooting notes in this folder must follow:
-[notes.md](file:///Users/nayemuddinshaikh/Developer/.agents/rules/notes.md)
+[notes.md](../.agents/rules/notes.md)
 
 ## Summary of Rules
 - **Instant Recall**: Prefer concise tables, syntax examples, and ready-to-copy code blocks.

@@ -1,7 +1,7 @@
 # Interview-Prep Directory Guidelines
 
 All interview questions, answers, and study guides in this directory must adhere to the workspace rule:
-[interview-prep.md](file:///Users/nayemuddinshaikh/Developer/.agents/rules/interview-prep.md)
+[interview-prep.md](../.agents/rules/interview-prep.md)
 
 ## Summary of Rules
 - **Direct 30-Second Spoken Answer**: Give a clear, verbal-friendly definition first.

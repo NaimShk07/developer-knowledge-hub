@@ -19,13 +19,13 @@ A beginner-friendly guide to core Docker concepts, written in simple and short E
 
 | #   | Topic                         | File                                                                                                                | What You Learn                                            |
 | :-- | :---------------------------- | :------------------------------------------------------------------------------------------------------------------ | :-------------------------------------------------------- |
-| 0   | **Containers vs VMs**         | [00-containers-vs-virtual-machines.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/00-containers-vs-virtual-machines.md) | How containers differ from Virtual Machines and hypervisors. |
-| 1   | **Images vs Containers**      | [01-images-and-containers.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/01-images-and-containers.md) | The difference between the blueprint and the running app. |
-| 2   | **Dockerfile**                | [02-dockerfile.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/02-dockerfile.md)                       | How to write instructions to build your own image.        |
-| 3   | **Port Mapping & Networking** | [03-ports-and-networking.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/03-ports-and-networking.md)   | How to access container apps in your browser.             |
-| 4   | **Volumes & Data Storage**    | [04-volumes.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/04-volumes.md)                             | How to keep data safe when containers stop.               |
-| 5   | **Docker Compose**            | [05-docker-compose.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/05-docker-compose.md)               | How to run multiple containers together easily.           |
-| 6   | **Environment & Secrets**     | [06-environment-variables-and-secrets.md](file:///Users/nayemuddinshaikh/Developer/Learning/Docker/06-environment-variables-and-secrets.md) | Injecting runtime config without hardcoding credentials.  |
+| 0   | **Containers vs VMs**         | [00-containers-vs-virtual-machines.md](00-containers-vs-virtual-machines.md) | How containers differ from Virtual Machines and hypervisors. |
+| 1   | **Images vs Containers**      | [01-images-and-containers.md](01-images-and-containers.md) | The difference between the blueprint and the running app. |
+| 2   | **Dockerfile**                | [02-dockerfile.md](02-dockerfile.md)                       | How to write instructions to build your own image.        |
+| 3   | **Port Mapping & Networking** | [03-ports-and-networking.md](03-ports-and-networking.md)   | How to access container apps in your browser.             |
+| 4   | **Volumes & Data Storage**    | [04-volumes.md](04-volumes.md)                             | How to keep data safe when containers stop.               |
+| 5   | **Docker Compose**            | [05-docker-compose.md](05-docker-compose.md)               | How to run multiple containers together easily.           |
+| 6   | **Environment & Secrets**     | [06-environment-variables-and-secrets.md](06-environment-variables-and-secrets.md) | Injecting runtime config without hardcoding credentials.  |
 
 ---
 

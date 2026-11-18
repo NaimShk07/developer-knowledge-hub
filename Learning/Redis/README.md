@@ -18,11 +18,11 @@ A beginner-friendly guide to core Redis concepts, written in simple and short En
 
 | # | Topic | File | What You Learn |
 | :- | :--- | :--- | :--- |
-| 1 | **Strings & Keys** | [01-strings-and-keys.md](file:///Users/nayemuddinshaikh/Developer/Learning/Redis/01-strings-and-keys.md) | Basic Key-Value pairs, expiration, and key management. |
-| 2 | **Data Structures** | [02-data-structures.md](file:///Users/nayemuddinshaikh/Developer/Learning/Redis/02-data-structures.md) | Lists, Hashes, Sets, and Sorted Sets. |
-| 3 | **Caching & TTL** | [03-caching-and-ttl.md](file:///Users/nayemuddinshaikh/Developer/Learning/Redis/03-caching-and-ttl.md) | Cache-aside pattern and automatic key expiration. |
-| 4 | **Persistence (RDB & AOF)** | [04-persistence.md](file:///Users/nayemuddinshaikh/Developer/Learning/Redis/04-persistence.md) | How Redis saves in-memory data to disk safely. |
-| 5 | **Pub/Sub & Messaging** | [05-pub-sub-and-messaging.md](file:///Users/nayemuddinshaikh/Developer/Learning/Redis/05-pub-sub-and-messaging.md) | Sending live messages between services. |
+| 1 | **Strings & Keys** | [01-strings-and-keys.md](01-strings-and-keys.md) | Basic Key-Value pairs, expiration, and key management. |
+| 2 | **Data Structures** | [02-data-structures.md](02-data-structures.md) | Lists, Hashes, Sets, and Sorted Sets. |
+| 3 | **Caching & TTL** | [03-caching-and-ttl.md](03-caching-and-ttl.md) | Cache-aside pattern and automatic key expiration. |
+| 4 | **Persistence (RDB & AOF)** | [04-persistence.md](04-persistence.md) | How Redis saves in-memory data to disk safely. |
+| 5 | **Pub/Sub & Messaging** | [05-pub-sub-and-messaging.md](05-pub-sub-and-messaging.md) | Sending live messages between services. |
 
 ---
 

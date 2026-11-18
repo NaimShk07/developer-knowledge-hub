@@ -1,6 +1,6 @@
 # Experiment: Two Pointers Pattern & Edge-Case Probes
 
-> **Concept Tested:** [Learning/DSA/01-two-pointers.md](file:///Users/nayemuddinshaikh/Developer/Learning/DSA/01-two-pointers.md)
+> **Concept Tested:** [Learning/DSA/01-two-pointers.md](../../Learning/DSA/01-two-pointers.md)
 
 ## Objective
 Verify the correctness and edge-case behavior of the Two Pointers pattern across:
