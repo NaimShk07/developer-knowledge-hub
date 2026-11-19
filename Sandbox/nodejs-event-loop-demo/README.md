@@ -1,6 +1,6 @@
 # Experiment: Node.js Event Loop Phase Ordering
 
-> **Concept Tested:** [Learning/Nodejs/01-event-loop-and-architecture.md](../../Learning/Nodejs/01-event-loop-and-architecture.md)
+> **Concept Tested:** [Learning/Nodejs/02-event-loop-and-architecture.md](../../Learning/Nodejs/02-event-loop-and-architecture.md)
 
 ## Objective
 Directly observe the execution order between Synchronous code, `process.nextTick()`, `Promise.then()` (Microtasks), `setTimeout(0)`, and `setImmediate()`.

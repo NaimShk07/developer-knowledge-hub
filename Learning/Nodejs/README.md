@@ -18,12 +18,12 @@ A beginner-friendly guide to core Node.js concepts, written in simple and short 
 
 | # | Topic | File | What You Learn |
 | :- | :--- | :--- | :--- |
-| 0 | **Sync vs Async & Blocking vs Non-Blocking** | [00-sync-async-blocking-nonblocking.md](00-sync-async-blocking-nonblocking.md) | The mental model of waiting vs delegating, and avoiding thread starvation. |
-| 1 | **Event Loop & Architecture** | [01-event-loop-and-architecture.md](01-event-loop-and-architecture.md) | How Node handles thousands of requests on a single thread. |
-| 2 | **Async Patterns** | [02-async-patterns.md](02-async-patterns.md) | Callbacks, Promises, and modern `async/await` best practices. |
-| 3 | **Streams & Buffers** | [03-streams-and-buffers.md](03-streams-and-buffers.md) | Handling huge files and data chunks without crashing memory. |
-| 4 | **Modules (CJS vs ESM)** | [04-modules-and-packages.md](04-modules-and-packages.md) | CommonJS (`require`) vs ES Modules (`import`), and package setup. |
-| 5 | **Worker Threads & Cluster** | [05-workers-and-cluster.md](05-workers-and-cluster.md) | Running CPU-heavy tasks without blocking the main event loop. |
+| 1 | **Sync vs Async & Blocking vs Non-Blocking** | [01-sync-async-blocking-nonblocking.md](01-sync-async-blocking-nonblocking.md) | The mental model of waiting vs delegating, and avoiding thread starvation. |
+| 2 | **Event Loop & Architecture** | [02-event-loop-and-architecture.md](02-event-loop-and-architecture.md) | How Node handles thousands of requests on a single thread. |
+| 3 | **Modules (CJS vs ESM)** | [03-modules-and-packages.md](03-modules-and-packages.md) | CommonJS (`require`) vs ES Modules (`import`), and package setup. |
+| 4 | **Async Patterns** | [04-async-patterns.md](04-async-patterns.md) | Callbacks, Promises, and modern `async/await` best practices. |
+| 5 | **Streams & Buffers** | [05-streams-and-buffers.md](05-streams-and-buffers.md) | Handling huge files and data chunks without crashing memory. |
+| 6 | **Worker Threads & Cluster** | [06-workers-and-cluster.md](06-workers-and-cluster.md) | Running CPU-heavy tasks without blocking the main event loop. |
 
 ---
 

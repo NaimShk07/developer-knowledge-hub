@@ -7,7 +7,7 @@ High-frequency Node.js interview questions with crisp 30-second spoken answers a
 ### Q1: How does Node.js handle concurrency despite being single-threaded?
 `[Level: Junior-Mid]` `[Frequency: Very High]`
 
-- **Related Learning Note:** [01-event-loop-and-architecture.md](../../Learning/Nodejs/01-event-loop-and-architecture.md)
+- **Related Learning Note:** [02-event-loop-and-architecture.md](../../Learning/Nodejs/02-event-loop-and-architecture.md)
 
 #### 30-Second Spoken Answer
 > "Node.js runs your JavaScript code on a single thread, but offloads asynchronous I/O operations—like database queries and file access—to the operating system or the multi-threaded Libuv thread pool. When the asynchronous work completes, Libuv queues the callback, and the Event Loop pushes it back onto the call stack as soon as the stack is empty."
@@ -26,7 +26,7 @@ High-frequency Node.js interview questions with crisp 30-second spoken answers a
 ### Q2: What is the difference between `process.nextTick()`, `setImmediate()`, and `setTimeout(0)`?
 `[Level: Mid]` `[Frequency: Very High]`
 
-- **Related Learning Note:** [01-event-loop-and-architecture.md](../../Learning/Nodejs/01-event-loop-and-architecture.md)
+- **Related Learning Note:** [02-event-loop-and-architecture.md](../../Learning/Nodejs/02-event-loop-and-architecture.md)
 - **Hands-on Experiment:** [Sandbox/nodejs-event-loop-demo/](../../Sandbox/nodejs-event-loop-demo/README.md)
 
 #### 30-Second Spoken Answer
@@ -50,7 +50,7 @@ fs.readFile('data.txt', () => {
 ### Q3: Why should you use Streams instead of `fs.readFile()` for large data?
 `[Level: Mid]` `[Frequency: High]`
 
-- **Related Learning Note:** [03-streams-and-buffers.md](../../Learning/Nodejs/03-streams-and-buffers.md)
+- **Related Learning Note:** [05-streams-and-buffers.md](../../Learning/Nodejs/05-streams-and-buffers.md)
 
 #### 30-Second Spoken Answer
 > "`fs.readFile()` loads the entire file into V8 RAM before returning it, which will exhaust server memory and crash the process if the file is large. Streams process data in small, continuous chunks (usually 64KB), keeping RAM usage tiny and constant regardless of file size, while also allowing immediate data transmission to the client."
@@ -65,7 +65,7 @@ fs.readFile('data.txt', () => {
 ### Q4: When would you use Worker Threads vs Child Processes vs Cluster?
 `[Level: Mid-Senior]` `[Frequency: Very High]`
 
-- **Related Learning Note:** [05-workers-and-cluster.md](../../Learning/Nodejs/05-workers-and-cluster.md)
+- **Related Learning Note:** [06-workers-and-cluster.md](../../Learning/Nodejs/06-workers-and-cluster.md)
 
 #### 30-Second Spoken Answer
 > "Use **Worker Threads** to execute CPU-intensive JavaScript tasks (like cryptography or image processing) in separate threads that share the same process memory. Use **Cluster** to spawn multiple identical Node.js processes sharing the same server port across multi-core CPUs. Use **Child Processes** when you need to execute external operating system commands or run separate non-Node binaries."
@@ -80,7 +80,7 @@ fs.readFile('data.txt', () => {
 ### Q5: How do you handle Unhandled Promise Rejections and Uncaught Exceptions?
 `[Level: Mid-Senior]` `[Frequency: High]`
 
-- **Related Learning Note:** [02-async-patterns.md](../../Learning/Nodejs/02-async-patterns.md)
+- **Related Learning Note:** [04-async-patterns.md](../../Learning/Nodejs/04-async-patterns.md)
 
 #### 30-Second Spoken Answer
 > "You should listen to the `unhandledRejection` and `uncaughtException` events on the global `process` object. An uncaught exception leaves the application in an indeterminate, corrupted state, so the best practice is to log the error, gracefully close active connections, and exit the process (`process.exit(1)`), allowing a process supervisor like Docker or PM2 to restart a fresh container."
@@ -95,7 +95,7 @@ fs.readFile('data.txt', () => {
 ### Q6: What is the difference between Synchronous vs Asynchronous, and Blocking vs Non-Blocking in Node.js?
 `[Level: Junior-Mid]` `[Frequency: Very High]`
 
-- **Related Learning Note:** [00-sync-async-blocking-nonblocking.md](../../Learning/Nodejs/00-sync-async-blocking-nonblocking.md)
+- **Related Learning Note:** [01-sync-async-blocking-nonblocking.md](../../Learning/Nodejs/01-sync-async-blocking-nonblocking.md)
 
 #### 30-Second Spoken Answer
 > "Synchronous versus asynchronous refers to the **order of execution**—synchronous code runs sequentially in line order, while asynchronous code initiates an operation and allows the program to continue before that operation completes. Blocking versus non-blocking refers to **what happens to the thread**—blocking code occupies the call stack so no other JavaScript can run, while non-blocking code yields control immediately so the server can handle other concurrent requests."
