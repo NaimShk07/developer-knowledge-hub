@@ -94,7 +94,29 @@ Bob was **not blocked** by Alice, even though both ran on the exact same single 
 
 ---
 
-## 5. Scaling Beyond the Single Thread in Production
+## 5. Concurrency vs Parallelism
+
+A common point of confusion in system design and Node.js:
+
+- **Concurrency:** **Dealing** with lots of things at once. It is an *architectural structure* where tasks interleave and take turns. A single core can be concurrent by switching contexts when a task waits for I/O.
+- **Parallelism:** **Doing** lots of things at once. It requires *physical hardware execution* where multiple tasks execute at the exact same physical clock cycle on multiple CPU cores.
+
+```text
+[ CONCURRENCY (Single Core - Node.js Event Loop) ]
+Core 1: [Task A (starts)] -> [Task B (starts)] -> [Task A (finishes)] -> [Task B (finishes)]
+(One worker juggling multiple balls)
+
+[ PARALLELISM (Multi-Core - Worker Threads / Cluster) ]
+Core 1: [Task A (executing heavy math)] ───────────────>
+Core 2: [Task B (executing heavy math)] ───────────────>
+(Two workers doing separate tasks at the exact same time)
+```
+
+Node.js achieves **massive concurrency** on a single thread. To achieve **parallelism**, it must leverage multiple CPU cores via `node:worker_threads` or `node:cluster`.
+
+---
+
+## 6. Scaling Beyond the Single Thread in Production
 
 While a single Node.js thread can handle tens of thousands of I/O connections, it only uses **1 CPU core**. To use all cores of a modern server:
 
@@ -107,15 +129,14 @@ While a single Node.js thread can handle tens of thousands of I/O connections, i
 
 ---
 
-## 6. Quick Reference
+## 7. Quick Reference
 
-| Feature | Node.js Architecture | Thread-Per-Request Server |
+| Feature | Concurrency | Parallelism |
 | :--- | :--- | :--- |
-| **Concurrency Model** | Single thread + Event Loop (I/O multiplexing) | 1 thread per client socket |
-| **RAM per Connection** | Kilobytes | Megabytes (1MB-2MB stack per thread) |
-| **Thread Context Switching** | Near Zero | Very High under 10k connections |
-| **Ideal Workload** | I/O-bound (APIs, WebSockets, streaming) | CPU-bound computation |
-| **Scaling Mechanism** | Multi-process (Docker, Cluster, PM2) | Thread pool size adjustment |
+| **Definition** | Structuring multiple tasks to make progress | Executing multiple tasks simultaneously |
+| **Hardware** | Can run on 1 single CPU core | Requires 2+ physical CPU cores |
+| **Node.js Default** | Yes (Event Loop + Non-blocking I/O) | No (must use Worker Threads / Cluster) |
+| **Analogy** | One juggler handling 3 balls | Two jugglers each handling 1 ball |
 
 ---
 

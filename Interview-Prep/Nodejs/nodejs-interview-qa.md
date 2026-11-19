@@ -80,3 +80,37 @@ High-frequency Node.js core runtime interview questions with crisp 30-second spo
 1. **Memory Efficiency:** Avoids 1MB–2MB thread stack memory per user, allowing 10,000+ idle or waiting connections with minimal RAM.
 2. **Zero Context Switching:** Eliminates CPU thread context switching overhead.
 3. **Multi-Core Scaling:** To utilize all CPU cores, run multiple Node instances using Docker replicas, Kubernetes pods, or the native `node:cluster` module.
+
+---
+
+### Q6: What happens if you execute a CPU-intensive task in Node.js, and how do you fix it?
+`[Level: Mid]` `[Frequency: Very High]`
+
+- **Related Learning Note:** [03-blocking-vs-non-blocking.md](../../Learning/Nodejs/03-blocking-vs-non-blocking.md)
+
+#### 30-Second Spoken Answer
+> "Because Node.js executes JavaScript on a single thread, a CPU-intensive task—like a massive calculation, image processing, or large JSON parsing—monopolizes the Call Stack. While that task computes, the Event Loop is completely frozen, meaning no other incoming requests, timer callbacks, or I/O events can be processed until it finishes. You fix this by offloading CPU-bound tasks to Worker Threads or dedicated microservices."
+
+#### Key Points to Mention
+1. **Thread Starvation:** Even though network I/O is asynchronous, executing synchronous CPU-heavy work inside an API route freezes the entire application for every concurrent user.
+2. **Worker Threads Solution:** Use the built-in `node:worker_threads` module to execute intensive tasks on separate OS threads while keeping the main Event Loop responsive.
+3. **Process Delegation:** For massive compute loads (e.g. video encoding or machine learning), offload the job to an external background worker queue (e.g., BullMQ with Redis) or a separate Go/Python service.
+
+#### Common Follow-Up Questions
+- *"Does `await` or wrapping a CPU task in a Promise unblock the Event Loop?"* → **No!** Promises only handle asynchronous completion; the synchronous JavaScript calculations inside the Promise still run on the single main Call Stack.
+
+---
+
+### Q7: What is the difference between Concurrency and Parallelism?
+`[Level: Junior-Mid]` `[Frequency: Very High]`
+
+- **Related Learning Note:** [05-concurrent-requests.md](../../Learning/Nodejs/05-concurrent-requests.md)
+
+#### 30-Second Spoken Answer
+> "Concurrency is about **dealing** with lots of things at once; parallelism is about **doing** lots of things at once. Concurrency is an architectural structure where tasks interleave and make progress on a single core by yielding while waiting. Parallelism requires multiple physical CPU cores executing distinct tasks at the exact same physical instant."
+
+#### Key Points to Mention
+1. **The Juggler Analogy:** Concurrency is one juggler handling multiple balls in the air (interleaving tasks). Parallelism is two jugglers each holding and throwing their own ball simultaneously.
+2. **Single Core Capability:** Concurrency can exist on a single-core machine through time-slicing and non-blocking I/O (Node's default mode).
+3. **Node.js Context:** A default Node.js web server is **concurrent** on 1 thread because it interleaves I/O requests. It achieves **parallelism** only when utilizing multiple CPU cores via Worker Threads, the Cluster module, or container replicas.
+
