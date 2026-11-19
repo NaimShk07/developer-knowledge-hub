@@ -1,111 +1,82 @@
 # Node.js Interview Questions & Answers
 
-High-frequency Node.js interview questions with crisp 30-second spoken answers and direct links to deep-dive notes in the `Learning/` folder.
+High-frequency Node.js core runtime interview questions with crisp 30-second spoken answers and direct links to deep-dive notes in the `Learning/` folder.
 
 ---
 
-### Q1: How does Node.js handle concurrency despite being single-threaded?
+### Q1: What is Node.js and how does its architecture work?
 `[Level: Junior-Mid]` `[Frequency: Very High]`
 
-- **Related Learning Note:** [02-event-loop-and-architecture.md](../../Learning/Nodejs/02-event-loop-and-architecture.md)
+- **Related Learning Note:** [01-nodejs-architecture.md](../../Learning/Nodejs/01-nodejs-architecture.md)
 
 #### 30-Second Spoken Answer
-> "Node.js runs your JavaScript code on a single thread, but offloads asynchronous I/O operations—like database queries and file access—to the operating system or the multi-threaded Libuv thread pool. When the asynchronous work completes, Libuv queues the callback, and the Event Loop pushes it back onto the call stack as soon as the stack is empty."
+> "Node.js is a runtime environment that executes JavaScript outside the browser. Architecturally, it combines Google Chrome's V8 engine—which compiles and executes JavaScript on a single Call Stack—with Libuv, a C library that handles the Event Loop, asynchronous non-blocking OS system calls, and a background thread pool for heavy tasks like file I/O and cryptography."
 
 #### Key Points to Mention
-1. **Single-Threaded JS, Multi-Threaded Underneath:** V8 executes JavaScript on 1 thread; Libuv manages a background pool of C++ threads (default 4).
-2. **Non-Blocking I/O:** The server never sleeps while waiting for a network socket or file read; it continues processing other client requests.
-3. **Event Demultiplexing:** Uses efficient OS system calls like `epoll` (Linux), `kqueue` (macOS), or `IOCP` (Windows).
+1. **Single-Threaded JS, Multi-Threaded Underneath:** V8 executes user JavaScript on 1 thread; Libuv manages a background pool of C++ worker threads (default 4).
+2. **Event Demultiplexing:** Offloads network socket I/O to native OS kernel mechanisms like `epoll` (Linux), `kqueue` (macOS), or `IOCP` (Windows).
+3. **C++ Bindings:** Node core modules (`node:fs`, `node:crypto`) serve as high-level JavaScript wrappers over low-level C/C++ implementations.
 
 #### Common Follow-Up Questions
-- *"What is Libuv?"* → The cross-platform C library that provides the event loop, asynchronous file I/O, DNS, and thread pool.
-- *"Can you change the Libuv thread pool size?"* → Yes, by setting `UV_THREADPOOL_SIZE=8` before the Node process boots.
+- *"Can you change the Libuv thread pool size?"* → Yes, by setting `UV_THREADPOOL_SIZE=8` (up to 128) before the Node process boots.
 
 ---
 
-### Q2: What is the difference between `process.nextTick()`, `setImmediate()`, and `setTimeout(0)`?
+### Q2: How does the Node.js Event Loop work, and what are its phases?
 `[Level: Mid]` `[Frequency: Very High]`
 
-- **Related Learning Note:** [02-event-loop-and-architecture.md](../../Learning/Nodejs/02-event-loop-and-architecture.md)
+- **Related Learning Note:** [02-event-loop.md](../../Learning/Nodejs/02-event-loop.md)
 - **Hands-on Experiment:** [Sandbox/nodejs-event-loop-demo/](../../Sandbox/nodejs-event-loop-demo/README.md)
 
 #### 30-Second Spoken Answer
-> "`process.nextTick()` is a high-priority microtask that executes immediately after the current operation finishes and before the Event Loop continues. `setTimeout(fn, 0)` is a macrotask scheduled for the Timers phase after a minimum 1ms threshold. `setImmediate()` is a macrotask designed to run in the Check phase, immediately after incoming I/O events are polled."
+> "The Event Loop continuously cycles through 6 distinct phases—Timers, Pending Callbacks, Idle/Prepare, Poll, Check, and Close. The Poll phase retrieves and processes new I/O events. Crucially, between every single phase, Node immediately drains the Microtask Queue, meaning `process.nextTick` and resolved Promises always run before any other scheduled phase continues."
 
 #### Key Points to Mention
-1. **Priority Hierarchy:** `process.nextTick` > `Promise.then` (Microtasks) > Macrotasks (`setTimeout`, `setImmediate`).
-2. **Inside I/O Callbacks:** If called inside an I/O callback (like `fs.readFile`), `setImmediate()` is **guaranteed** to run before `setTimeout(0)`.
-3. **Starvation Warning:** Recursive calls to `process.nextTick()` can completely starve the Event Loop and block all I/O.
-
-#### Minimal Code Example
-```javascript
-fs.readFile('data.txt', () => {
-  setTimeout(() => console.log('Timer'), 0);
-  setImmediate(() => console.log('Immediate')); // Always prints first!
-});
-```
+1. **Microtasks vs Macrotasks:** Microtasks (`process.nextTick` $\rightarrow$ `Promise.then`) have absolute priority over macrotasks (`setTimeout`, `setImmediate`).
+2. **Poll Phase Role:** Waits for incoming connections, executes I/O callbacks, and decides when to transition to the Check phase.
+3. **Inside I/O Callbacks:** If called inside an I/O callback (like `fs.readFile`), `setImmediate()` is **guaranteed** to run before `setTimeout(0)`.
 
 ---
 
-### Q3: Why should you use Streams instead of `fs.readFile()` for large data?
-`[Level: Mid]` `[Frequency: High]`
-
-- **Related Learning Note:** [05-streams-and-buffers.md](../../Learning/Nodejs/05-streams-and-buffers.md)
-
-#### 30-Second Spoken Answer
-> "`fs.readFile()` loads the entire file into V8 RAM before returning it, which will exhaust server memory and crash the process if the file is large. Streams process data in small, continuous chunks (usually 64KB), keeping RAM usage tiny and constant regardless of file size, while also allowing immediate data transmission to the client."
-
-#### Key Points to Mention
-1. **Memory Safety:** Streams prevent `ERR_STRING_TOO_LONG` and JavaScript heap out-of-memory crashes.
-2. **Time to First Byte (TTFB):** The client starts receiving data immediately without waiting for the full file to be read.
-3. **Pipeline Utility:** Always use `pipeline()` from `node:stream/promises` to automatically handle stream errors and cleanup without leaking file descriptors.
-
----
-
-### Q4: When would you use Worker Threads vs Child Processes vs Cluster?
-`[Level: Mid-Senior]` `[Frequency: Very High]`
-
-- **Related Learning Note:** [06-workers-and-cluster.md](../../Learning/Nodejs/06-workers-and-cluster.md)
-
-#### 30-Second Spoken Answer
-> "Use **Worker Threads** to execute CPU-intensive JavaScript tasks (like cryptography or image processing) in separate threads that share the same process memory. Use **Cluster** to spawn multiple identical Node.js processes sharing the same server port across multi-core CPUs. Use **Child Processes** when you need to execute external operating system commands or run separate non-Node binaries."
-
-#### Key Points to Mention
-1. **Worker Threads:** Lightest memory footprint for CPU math; supports `SharedArrayBuffer`.
-2. **Cluster Module:** Distributes incoming HTTP connections across workers using round-robin; isolated memory prevents one crash from taking down all cores.
-3. **Modern Alternative:** In containerized setups (Docker / Kubernetes), teams usually run multiple single-core container replicas behind a load balancer instead of Node.js clustering.
-
----
-
-### Q5: How do you handle Unhandled Promise Rejections and Uncaught Exceptions?
-`[Level: Mid-Senior]` `[Frequency: High]`
-
-- **Related Learning Note:** [04-async-patterns.md](../../Learning/Nodejs/04-async-patterns.md)
-
-#### 30-Second Spoken Answer
-> "You should listen to the `unhandledRejection` and `uncaughtException` events on the global `process` object. An uncaught exception leaves the application in an indeterminate, corrupted state, so the best practice is to log the error, gracefully close active connections, and exit the process (`process.exit(1)`), allowing a process supervisor like Docker or PM2 to restart a fresh container."
-
-#### Key Points to Mention
-1. **Never Just Ignore:** Catching `uncaughtException` and continuing to serve traffic is dangerous because memory or database sockets may be leaked or corrupted.
-2. **Graceful Shutdown:** Stop accepting new requests (`server.close()`), wait for in-flight requests to complete, and exit within a timeout.
-3. **Modern Node Behavior:** Modern Node.js versions crash by default on unhandled promise rejections (`--unhandled-rejections=throw`).
-
----
-
-### Q6: What is the difference between Synchronous vs Asynchronous, and Blocking vs Non-Blocking in Node.js?
+### Q3: What is the difference between Blocking and Non-Blocking code?
 `[Level: Junior-Mid]` `[Frequency: Very High]`
 
-- **Related Learning Note:** [01-sync-async-blocking-nonblocking.md](../../Learning/Nodejs/01-sync-async-blocking-nonblocking.md)
+- **Related Learning Note:** [03-blocking-vs-non-blocking.md](../../Learning/Nodejs/03-blocking-vs-non-blocking.md)
 
 #### 30-Second Spoken Answer
-> "Synchronous versus asynchronous refers to the **order of execution**—synchronous code runs sequentially in line order, while asynchronous code initiates an operation and allows the program to continue before that operation completes. Blocking versus non-blocking refers to **what happens to the thread**—blocking code occupies the call stack so no other JavaScript can run, while non-blocking code yields control immediately so the server can handle other concurrent requests."
+> "Blocking code freezes the single JavaScript thread, preventing the Event Loop from executing any other code until that operation finishes. Non-blocking code initiates the operation in the background and immediately frees the Call Stack so the server can continue answering other incoming requests."
 
 #### Key Points to Mention
-1. **The Single-Thread Trap:** Because Node.js has only one main thread for your JavaScript, executing a blocking function (like `fs.readFileSync` or an infinite loop) freezes the entire server for every user.
-2. **Beyond File I/O:** Blocking isn't just disk reads; heavy synchronous CPU calculations (like large `JSON.parse` operations or complex regular expressions) also block the Event Loop.
-3. **Non-Blocking with Libuv:** Asynchronous non-blocking I/O delegates work to the kernel or Libuv thread pool, freeing the call stack to process other incoming HTTP connections.
+1. **Server Starvation:** Because Node runs on one main thread, one blocking function (like `fs.readFileSync` or an infinite loop) freezes the server for every connected user.
+2. **Beyond File I/O:** Blocking includes heavy CPU loops, massive `JSON.parse` operations, and ReDoS (catastrophic regex backtracking).
+3. **Best Practice:** Use non-blocking async APIs for all I/O, and offload CPU math to Worker Threads.
 
-#### Common Follow-Up Questions
-- *"Are all asynchronous operations non-blocking?"* → In Node.js, asynchronous I/O is non-blocking. However, if an asynchronous callback contains heavy CPU work, executing that callback will still block the event loop while it runs.
-- *"When is synchronous code acceptable in Node.js?"* → During application startup (e.g., loading config files before the HTTP server starts listening for traffic).
+---
 
+### Q4: What is the difference between Synchronous and Asynchronous in Node.js?
+`[Level: Junior-Mid]` `[Frequency: Very High]`
+
+- **Related Learning Note:** [04-synchronous-vs-asynchronous.md](../../Learning/Nodejs/04-synchronous-vs-asynchronous.md)
+
+#### 30-Second Spoken Answer
+> "Synchronous refers to sequential, line-by-line execution where each operation waits for the previous line to finish before moving forward. Asynchronous refers to deferred execution where an operation is scheduled to complete in the future, allowing JavaScript to register a handler and immediately execute the next line."
+
+#### Key Points to Mention
+1. **Flow vs Thread:** Synchronous vs asynchronous is about execution order; blocking vs non-blocking is about whether the thread is held hostage.
+2. **JavaScript Nature:** JavaScript itself is synchronous and single-threaded; asynchronous behavior is provided by the surrounding Node.js runtime.
+3. **Modern Syntax:** Modern asynchronous code is handled cleanly with `async/await` and Promises, replacing legacy nested callbacks.
+
+---
+
+### Q5: How does Node.js handle thousands of Concurrent Requests on a single thread?
+`[Level: Mid-Senior]` `[Frequency: Very High]`
+
+- **Related Learning Note:** [05-concurrent-requests.md](../../Learning/Nodejs/05-concurrent-requests.md)
+
+#### 30-Second Spoken Answer
+> "Node.js uses an event-driven I/O multiplexing model. Instead of creating a new operating system thread for every client connection like Apache or Java, Node registers client sockets with the OS kernel via `epoll` or `kqueue`. While a request waits for database or disk I/O, the single thread is 100% free to serve other incoming requests, consuming only kilobytes of RAM per connection."
+
+#### Key Points to Mention
+1. **Memory Efficiency:** Avoids 1MB–2MB thread stack memory per user, allowing 10,000+ idle or waiting connections with minimal RAM.
+2. **Zero Context Switching:** Eliminates CPU thread context switching overhead.
+3. **Multi-Core Scaling:** To utilize all CPU cores, run multiple Node instances using Docker replicas, Kubernetes pods, or the native `node:cluster` module.
