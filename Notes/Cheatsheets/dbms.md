@@ -56,3 +56,41 @@ CREATE INDEX idx_orders_user_id ON orders(user_id);
 | **NOT NULL** | `name VARCHAR(50) NOT NULL` | ❌ Never | ❌ No |
 | **CHECK** | `CHECK (age >= 18)` | ✅ Yes | ❌ No |
 | **DEFAULT** | `DEFAULT CURRENT_TIMESTAMP` | — | ❌ No |
+
+---
+
+## 4. SQL vs NoSQL Decision Matrix
+
+| Criteria | SQL (PostgreSQL, MySQL) | NoSQL (MongoDB, Redis, DynamoDB) |
+| :--- | :--- | :--- |
+| **Schema** | Pre-defined, rigid relational tables | Flexible, schemaless JSON / Key-Value |
+| **Integrity** | ACID transactions, referential foreign keys | BASE (Eventual consistency), loose integrity |
+| **Scaling** | Vertical scaling; Read replicas | Native horizontal partitioning / sharding |
+| **Best For** | Financial transactions, orders, multi-table joins | Caching, event streams, catalogs, high write RPS |
+
+---
+
+## 5. Relationship Modeling Quick Reference
+
+```sql
+-- 1:1 Relationship (Unique FK)
+CREATE TABLE profiles (
+  id SERIAL PRIMARY KEY,
+  user_id INT NOT NULL UNIQUE REFERENCES users(id) ON DELETE CASCADE
+);
+
+-- 1:N Relationship (FK on 'Many' side + explicit index)
+CREATE TABLE orders (
+  id SERIAL PRIMARY KEY,
+  user_id INT NOT NULL REFERENCES users(id) ON DELETE RESTRICT
+);
+CREATE INDEX idx_orders_user_id ON orders(user_id);
+
+-- N:M Relationship (Junction Table + Composite PK + Reverse Index)
+CREATE TABLE student_courses (
+  student_id INT NOT NULL REFERENCES students(id) ON DELETE CASCADE,
+  course_id INT NOT NULL REFERENCES courses(id) ON DELETE CASCADE,
+  PRIMARY KEY (student_id, course_id)
+);
+CREATE INDEX idx_sc_course_id ON student_courses(course_id);
+```
