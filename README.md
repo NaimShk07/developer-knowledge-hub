@@ -1,7 +1,7 @@
 # Developer Knowledge & Practice Hub (Road to FAANG SDE-1)
 
 > **Mission:** A comprehensive 6-month engineering knowledge system targeting **SDE-1 at Tier-1 Tech** (Meta, Google, Amazon, Microsoft, Apple, Uber, Stripe).  
-> **Master 6-Month Plan:** [Learning/FAANG-Roadmap.md](Learning/FAANG-Roadmap.md)
+> **Master 6-Month Plan:** [Learning/FAANG-Roadmap.md](Learning/FAANG-Roadmap.md) | **Active Week 1 Plan:** [Learning/Roadmap-Week-1.md](Learning/Roadmap-Week-1.md)
 
 ---
 
@@ -18,7 +18,7 @@ flowchart LR
 
 | Section | Role | Guidelines | What's Inside |
 | :--- | :--- | :--- | :--- |
-| [**`Learning/`**](Learning/Docker/README.md) | **Deep Dives in Plain English** | Short, clear explanations with analogies and diagrams | [Docker](Learning/Docker/README.md), [Redis](Learning/Redis/README.md), [Node.js](Learning/Nodejs/README.md), [DSA](Learning/DSA/README.md) |
+| [**`Learning/`**](Learning/Roadmap-Week-1.md) | **Deep Dives in Plain English** | Short, clear explanations with analogies and diagrams | [DBMS](Learning/DBMS/README.md), [System Design](Learning/System-Design/README.md), [Node.js](Learning/Nodejs/README.md), [DSA](Learning/DSA/README.md) |
 | [**`Sandbox/`**](Sandbox/README.md) | **Runnable Prototypes & Probes** | Self-contained experiments with zero external baggage | Event loop tests, Docker volumes, Redis cache spikes, Two pointers test runner |
 | [**`Notes/`**](Notes/README.md) | **3-Second Daily Cheatsheets** | Syntax tables and zero-fluff command lookup | Docker CLI, Redis CLI, Node.js built-ins, DSA Big-O & Pattern Matrix |
 | [**`Interview-Prep/`**](Interview-Prep/README.md) | **Verbal Mastery & Coding Q&A** | 30s spoken answers, rule-of-3 key points, follow-ups | High-frequency Docker, Redis, Node.js, and DSA interview questions |

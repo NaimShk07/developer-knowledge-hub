@@ -14,6 +14,8 @@ While the `Learning/` folder explains concepts in depth, the `Notes/` folder is 
 
 | Technology | Cheatsheet | Deep-Dive Concept | Interview Questions |
 | :--- | :--- | :--- | :--- |
+| **DBMS & SQL** | [dbms.md](Cheatsheets/dbms.md) | [Learning/DBMS/](../Learning/DBMS/README.md) | [DBMS Q&A](../Interview-Prep/DBMS/dbms-day1-qa.md) |
+| **System Design** | [system-design.md](Cheatsheets/system-design.md) | [Learning/System-Design/](../Learning/System-Design/README.md) | [System Design Q&A](../Interview-Prep/System-Design/system-design-foundations-qa.md) |
 | **DSA (JS/TS)** | [dsa.md](Cheatsheets/dsa.md) | [Learning/DSA/](../Learning/DSA/README.md) | [DSA Q&A](../Interview-Prep/DSA/two-pointers-interview-qa.md) |
 | **Node.js** | [nodejs.md](Cheatsheets/nodejs.md) | [Learning/Nodejs/](../Learning/Nodejs/README.md) | [Node.js Q&A](../Interview-Prep/Nodejs/nodejs-interview-qa.md) |
 | **Docker** | [docker.md](Cheatsheets/docker.md) | [Learning/Docker/](../Learning/Docker/README.md) | [Docker Q&A](../Interview-Prep/Docker/docker-interview-qa.md) |
@@ -30,6 +32,8 @@ Notes/
 ├── AGENTS.md                 # Agent rules for reference sheets
 ├── README.md                 # This index
 ├── Cheatsheets/              # Syntax and CLI tables by technology
+│   ├── dbms.md               # DBMS keys, constraints & SQL reference
+│   ├── system-design.md      # Scaling, latency numbers & SDE-1 framework
 │   ├── dsa.md                # DSA pattern identification matrix & JS gotchas
 │   ├── nodejs.md             # Node.js built-ins & flags quick reference
 │   ├── docker.md             # Docker & Compose quick reference

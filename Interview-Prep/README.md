@@ -24,7 +24,8 @@ Every question in this hub is designed with a **30-Second Spoken Answer** follow
 | **Node.js** | [Node.js Q&A](Nodejs/nodejs-interview-qa.md) | [Learning/Nodejs/](../Learning/Nodejs/README.md) | Junior to Senior |
 | **Docker** | [Docker Q&A](Docker/docker-interview-qa.md) | [Learning/Docker/](../Learning/Docker/README.md) | Junior to Senior |
 | **Redis** | [Redis Q&A](Redis/redis-interview-qa.md) | [Learning/Redis/](../Learning/Redis/README.md) | Mid to Senior |
-| **System Design** | *Coming Soon* | — | Mid to Staff |
+| **DBMS** | [DBMS Day 1 Q&A](DBMS/dbms-day1-qa.md) | [Learning/DBMS/](../Learning/DBMS/README.md) | Junior to Mid |
+| **System Design** | [System Design Foundations](System-Design/system-design-foundations-qa.md) | [Learning/System-Design/](../Learning/System-Design/README.md) | Junior to Mid |
 | **Behavioral** | *Coming Soon* | — | All levels |
 
 ---
@@ -38,12 +39,15 @@ Interview-Prep/
 ├── DSA/
 │   ├── sliding-window-interview-qa.md # Verbal coding walkthroughs & follow-ups
 │   └── two-pointers-interview-qa.md # Verbal coding walkthroughs & follow-ups
+├── DBMS/
+│   └── dbms-day1-qa.md        # Relational models, keys & integrity constraints
 ├── Nodejs/
 │   └── nodejs-interview-qa.md # High-frequency Node.js interview questions
 ├── Docker/
 │   └── docker-interview-qa.md # High-frequency Docker interview questions
 ├── Redis/
 │   └── redis-interview-qa.md  # High-frequency Redis interview questions
-├── System-Design/            # System design templates & cheat sheets
+├── System-Design/
+│   └── system-design-foundations-qa.md # FR vs NFR, scaling & latency questions
 └── Behavioral/               # STAR method answers & leadership stories
 ```
