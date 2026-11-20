@@ -19,7 +19,8 @@ Every question in this hub is designed with a **30-Second Spoken Answer** follow
 
 | Topic | Interview Questions | Deep-Dive Learning Notes | Difficulty |
 | :--- | :--- | :--- | :--- |
-| **DSA (Two Pointers)** | [Two Pointers Q&A](DSA/two-pointers-interview-qa.md) | [Learning/DSA/](../Learning/DSA/README.md) | Junior to Senior |
+| **DSA (Sliding Window)** | [Sliding Window Q&A](DSA/sliding-window-interview-qa.md) | [Learning/DSA/](../Learning/DSA/README.md) | Mid (FAANG High Frequency) |
+| **DSA (Two Pointers)** | [Two Pointers Q&A](DSA/two-pointers-interview-qa.md) | [Learning/DSA/](../Learning/DSA/README.md) | Junior to Mid |
 | **Node.js** | [Node.js Q&A](Nodejs/nodejs-interview-qa.md) | [Learning/Nodejs/](../Learning/Nodejs/README.md) | Junior to Senior |
 | **Docker** | [Docker Q&A](Docker/docker-interview-qa.md) | [Learning/Docker/](../Learning/Docker/README.md) | Junior to Senior |
 | **Redis** | [Redis Q&A](Redis/redis-interview-qa.md) | [Learning/Redis/](../Learning/Redis/README.md) | Mid to Senior |
@@ -35,6 +36,7 @@ Interview-Prep/
 ├── AGENTS.md                 # Agent guidelines for interview questions
 ├── README.md                 # This central hub
 ├── DSA/
+│   ├── sliding-window-interview-qa.md # Verbal coding walkthroughs & follow-ups
 │   └── two-pointers-interview-qa.md # Verbal coding walkthroughs & follow-ups
 ├── Nodejs/
 │   └── nodejs-interview-qa.md # High-frequency Node.js interview questions

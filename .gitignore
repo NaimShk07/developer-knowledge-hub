@@ -4,6 +4,9 @@
 .LSOverride
 ._*
 Thumbs.db
+*.png
+*.jpg
+*.jpeg
 
 # Secrets & Environment Variables (CRITICAL)
 .env

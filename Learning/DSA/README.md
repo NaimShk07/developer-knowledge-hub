@@ -14,7 +14,7 @@ There are thousands of LeetCode problems, but almost all of them map to **14 cor
 | Phase | # | Pattern | File | Core Data Structures | Canonical Problems |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Phase 1: Linear Arrays & Strings** | 1 | **Two Pointers** | [01-two-pointers.md](01-two-pointers.md) | Array, String | Two Sum II (Sorted), Valid Palindrome, 3Sum, Container With Most Water |
-| | 2 | **Sliding Window** | *Coming Soon* | Array, String, Map | Longest Substring Without Repeating Characters, Min Size Subarray Sum |
+| | 2 | **Sliding Window** | [02-sliding-window.md](02-sliding-window.md) | Array, String, Map | Longest Substring Without Repeating Characters, Min Size Subarray Sum, Anagrams |
 | | 3 | **Prefix Sum** | *Coming Soon* | Array, Map | Subarray Sum Equals K, Product of Array Except Self |
 | | 4 | **Fast & Slow Pointers** | *Coming Soon* | Linked List, Array | Linked List Cycle, Middle of the Linked List, Happy Number |
 | **Phase 2: Ordering & Searching** | 5 | **Modified Binary Search** | *Coming Soon* | Array | Search in Rotated Sorted Array, Find Minimum in Rotated Sorted Array |
