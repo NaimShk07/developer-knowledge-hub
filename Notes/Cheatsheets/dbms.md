@@ -94,3 +94,26 @@ CREATE TABLE student_courses (
 );
 CREATE INDEX idx_sc_course_id ON student_courses(course_id);
 ```
+
+---
+
+## 6. SQL Query Execution Order & JOIN Reference
+
+```text
+Logical Execution Pipeline:
+1. FROM & JOIN  ──> Candidate rows
+2. WHERE        ──> Row-level index filter
+3. GROUP BY     ──> Grouping into buckets
+4. HAVING       ──> Aggregate group filter
+5. SELECT       ──> Projection & aliases
+6. DISTINCT     ──> Deduplication
+7. ORDER BY     ──> Sorting
+8. LIMIT/OFFSET ──> Pagination
+```
+
+### JOIN Quick Lookup
+| JOIN Type | Result Set | Use Case |
+| :--- | :--- | :--- |
+| **INNER JOIN** | Matches in BOTH tables | Active relationships (`users` with `orders`) |
+| **LEFT JOIN** | ALL left rows + matched right rows (or NULL) | Inclusive reports (`users` with or without orders) |
+| **LEFT JOIN ... WHERE right.id IS NULL** | Only left rows with NO match | Anti-join: find inactive users / orphan records |

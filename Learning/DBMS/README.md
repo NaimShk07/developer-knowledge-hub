@@ -10,7 +10,7 @@ A structured guide to Database Management Systems tailored for FAANG SDE-1 backe
 | :---: | :--- | :--- | :--- |
 | **Day 1** | **DBMS Intro, Keys & Constraints** | [01-dbms-introduction-keys-constraints.md](01-dbms-introduction-keys-constraints.md) | DBMS vs RDBMS, PK, FK, Candidate keys, and database constraints. |
 | **Day 3** | **SQL vs NoSQL & Relationships** | [02-sql-vs-nosql-and-relationships.md](02-sql-vs-nosql-and-relationships.md) | Relational vs Document/Key-Value, 1:1, 1:N, N:M table modeling. |
-| **Day 5** | **Basic SQL Queries & JOINs** | *Day 5 Scheduled* | WHERE, GROUP BY, HAVING, Aggregate functions, INNER/LEFT/FULL JOINs. |
+| **Day 5** | **Basic SQL Queries & JOINs** | [03-sql-queries-aggregations-joins.md](03-sql-queries-aggregations-joins.md) | WHERE, GROUP BY, HAVING, Aggregate functions, INNER/LEFT/FULL JOINs. |
 
 ---
 

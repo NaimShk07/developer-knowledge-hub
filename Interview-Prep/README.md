@@ -24,7 +24,7 @@ Every question in this hub is designed with a **30-Second Spoken Answer** follow
 | **Node.js** | [Node.js Q&A](Nodejs/nodejs-interview-qa.md) | [Learning/Nodejs/](../Learning/Nodejs/README.md) | Junior to Senior |
 | **Docker** | [Docker Q&A](Docker/docker-interview-qa.md) | [Learning/Docker/](../Learning/Docker/README.md) | Junior to Senior |
 | **Redis** | [Redis Q&A](Redis/redis-interview-qa.md) | [Learning/Redis/](../Learning/Redis/README.md) | Mid to Senior |
-| **DBMS** | [DBMS Day 1 Q&A](DBMS/dbms-day1-qa.md)<br>[DBMS Day 3 Q&A](DBMS/dbms-day3-qa.md) | [Learning/DBMS/](../Learning/DBMS/README.md) | Junior to Mid |
+| **DBMS** | [DBMS Day 1 Q&A](DBMS/dbms-day1-qa.md)<br>[DBMS Day 3 Q&A](DBMS/dbms-day3-qa.md)<br>[DBMS Day 5 Q&A](DBMS/dbms-day5-qa.md) | [Learning/DBMS/](../Learning/DBMS/README.md) | Junior to Mid |
 | **System Design** | [System Design Foundations](System-Design/system-design-foundations-qa.md) | [Learning/System-Design/](../Learning/System-Design/README.md) | Junior to Mid |
 | **Behavioral** | *Coming Soon* | — | All levels |
 
@@ -41,7 +41,8 @@ Interview-Prep/
 │   └── two-pointers-interview-qa.md # Verbal coding walkthroughs & follow-ups
 ├── DBMS/
 │   ├── dbms-day1-qa.md        # Relational models, keys & integrity constraints
-│   └── dbms-day3-qa.md        # SQL vs NoSQL, PK/FK & N:M relationships
+│   ├── dbms-day3-qa.md        # SQL vs NoSQL, PK/FK & N:M relationships
+│   └── dbms-day5-qa.md        # Execution order, WHERE vs HAVING & JOIN anti-patterns
 ├── Nodejs/
 │   └── nodejs-interview-qa.md # High-frequency Node.js interview questions
 ├── Docker/
