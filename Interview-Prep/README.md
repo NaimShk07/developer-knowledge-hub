@@ -27,6 +27,7 @@ Every question in this hub is designed with a **30-Second Spoken Answer** follow
 | **DBMS** | [DBMS Day 1 Q&A](DBMS/dbms-day1-qa.md)<br>[DBMS Day 3 Q&A](DBMS/dbms-day3-qa.md)<br>[DBMS Day 5 Q&A](DBMS/dbms-day5-qa.md) | [Learning/DBMS/](../Learning/DBMS/README.md) | Junior to Mid |
 | **System Design** | [System Design Foundations](System-Design/system-design-foundations-qa.md) | [Learning/System-Design/](../Learning/System-Design/README.md) | Junior to Mid |
 | **Behavioral** | *Coming Soon* | — | All levels |
+| **Interactive Checkpoints** | [Week 1 Diagnostic Log](Assessments/week-1-checkpoints.md) | [Week 1 Plan](../Learning/Roadmap-Week-1.md) | Self-Assessment Log |
 
 ---
 
@@ -51,5 +52,7 @@ Interview-Prep/
 │   └── redis-interview-qa.md  # High-frequency Redis interview questions
 ├── System-Design/
 │   └── system-design-foundations-qa.md # FR vs NFR, scaling & latency questions
+├── Assessments/
+│   └── week-1-checkpoints.md  # Interactive answers, interview evaluations & gap logs
 └── Behavioral/               # STAR method answers & leadership stories
 ```
