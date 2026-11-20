@@ -66,3 +66,28 @@ Approximate hardware & network timings to memorize for back-of-the-envelope calc
 - **Little's Law:**  
   $$\text{Concurrent Requests} = \text{Throughput} \times \text{Average Latency}$$  
   *Example:* $1{,}000\text{ QPS} \times 0.05\text{ s (50 ms)} = 50\text{ concurrent requests in flight}$.
+
+---
+
+## 6. Networking & Traffic Quick Reference
+
+### Request-Response Lifecycle
+1. **DNS Resolution:** Recursive lookup (Browser $\rightarrow$ OS $\rightarrow$ Resolver $\rightarrow$ Authoritative).
+2. **TCP Handshake:** 3-Way (SYN $\rightarrow$ SYN-ACK $\rightarrow$ ACK).
+3. **TLS Handshake:** Certificate verification + asymmetric key exchange to negotiate symmetric AES session key.
+4. **LB / Reverse Proxy:** Route based on health and IP/URL.
+5. **API Gateway:** SSL termination, Token validation, Rate limiting, Path routing.
+6. **Stateless API:** Express controller $\rightarrow$ DB/Redis $\rightarrow$ JSON response.
+
+### L4 vs L7 Load Balancers
+| Feature | Layer 4 (Transport) | Layer 7 (Application) |
+| :--- | :--- | :--- |
+| **Protocol** | TCP / UDP | HTTP / HTTPS / WebSockets |
+| **Inspection** | IP & Port only | URL path, headers, cookies, payload |
+| **Routing** | Fast packet routing | Path routing (`/api/v1/*`), SSL termination |
+| **Examples** | AWS NLB, Linux IPVS | AWS ALB, Nginx, Envoy, Traefik |
+
+### Stateless Architecture Golden Rules
+- **Rule 1:** Zero in-memory user sessions in server RAM.
+- **Rule 2:** Zero persistent files stored on local server disks (use Amazon S3 or Cloudflare R2).
+- **Rule 3:** Store shared session state in **Redis** or use self-contained **JWTs**.
