@@ -44,14 +44,39 @@ Every DSA coding problem in `Interview-Prep/DSA/` must follow the **4-Step Verba
 // Clean, readable, production-quality solution
 ```
 
-#### Common Follow-Up Questions
-- *"How to optimize space further?"* → 1-sentence answer.
-- *"What if constraints changed to X?"* → 1-sentence answer.
+#### Mandatory Follow-Up Questions (Minimum 2 Required)
+- **Follow-up 1 (The Constraint Twist):** *"What if constraints changed (e.g. data stream, memory limit, negative numbers, duplicates)?"* → Concise 1–2 sentence answer.
+- **Follow-up 2 (The Interviewer Trap / Edge Case):** *"Can we optimize space further / Can we do this in O(1)?"* or a common misconception trap → Concise 1–2 sentence answer.
 ````
 
 ---
 
-## 3. Standard Behavioral Template (STAR Method)
+## 3. Standard Technical Concept Q&A Template (System / Runtime / DB)
+
+Every conceptual question in `Interview-Prep/<Topic>/` (e.g., Node.js, Docker, Redis) must also follow this format:
+
+````markdown
+### Q: [Exact Question]?
+`[Level: Junior | Mid | Senior]` `[Frequency: High | Very High]`
+
+- **Related Learning Note:** [Topic Note](../../Learning/...)
+
+#### 30-Second Spoken Answer
+> "Say this out loud in 2–3 clear sentences. Start with a direct definition, then mention why it matters."
+
+#### Key Points to Mention (Rule of 3)
+1. Point 1: Essential technical fact.
+2. Point 2: Real-world practical application.
+3. Point 3: Trade-off or comparison.
+
+#### Mandatory Follow-Up Questions (Minimum 2 Required)
+- **Follow-up 1 (Under-the-Hood / Scaling):** *"What happens when scale increases / How does the kernel/runtime handle this?"* → Crisp answer.
+- **Follow-up 2 (The Trap / Counter-Intuitive Twist):** *"Why not just do X instead / What are the failure modes?"* → Crisp answer.
+````
+
+---
+
+## 4. Standard Behavioral Template (STAR Method)
 
 Every behavioral question in `Interview-Prep/Behavioral/` must follow the **STAR Framework**:
 
@@ -73,7 +98,7 @@ Every behavioral question in `Interview-Prep/Behavioral/` must follow the **STAR
 
 ---
 
-## 4. Verbal Delivery Rules
+## 5. Verbal Delivery Rules
 - **Lead with the Direct Answer:** Never waffle or start with "Well, it depends...". Give the concrete answer first, then elaborate.
 - **Rule of 3:** Structure technical points in 3 clear bullets.
 - **Proactive Dry Run:** In DSA, always walk through one example array verbally before saying you are done.
