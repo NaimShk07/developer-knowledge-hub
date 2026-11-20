@@ -1,6 +1,7 @@
-# Developer Knowledge & Practice Hub
+# Developer Knowledge & Practice Hub (Road to FAANG SDE-1)
 
-An integrated engineering knowledge system for continuous learning, hands-on experimentation, daily cheatsheets, and interview readiness.
+> **Mission:** A comprehensive 6-month engineering knowledge system targeting **SDE-1 at Tier-1 Tech** (Meta, Google, Amazon, Microsoft, Apple, Uber, Stripe).  
+> **Master 6-Month Plan:** [Learning/FAANG-Roadmap.md](Learning/FAANG-Roadmap.md)
 
 ---
 

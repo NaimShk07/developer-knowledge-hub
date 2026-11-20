@@ -1,64 +1,85 @@
-# Learning Notes Guidelines
+# Learning Notes Guidelines (FAANG SDE-1 Standard)
 
 ## Scope
 This rule applies when creating, editing, or summarizing notes, concepts, and documentation inside the `Learning/` directory.
 
-## Core Principle: Simple & Short English
-Write all notes in simple, plain, and concise English. Notes should be fast to read, effortless to understand, and easy to recall.
+## Core Principle: Plain English + Architectural Depth
+Write all notes in simple, short, and concise English. Maintain the high standard expected of an SDE-1 candidate at Tier-1 tech companies:
+- Explain the underlying mechanics (how it works in memory, on threads, or in CPU cycles).
+- Never just show syntax; explain **why** this pattern/technology was designed and what problems it solves.
 
 ---
 
 ## 1. Writing Style & Tone
 
-- **Simple Words**: Use everyday English. Avoid academic jargon, unnecessarily complex terms, or overly formal phrases.
-- **Short Sentences**: Keep sentences direct and concise (ideally under 15–20 words). One clear thought per sentence.
-- **Short Paragraphs**: Maximum 2 to 3 sentences per paragraph. Never write large blocks of text.
-- **Active Voice**: Be direct and instructional:
-  - *Good:* "Use `map()` to transform each element in the list."
-  - *Avoid:* "The transformation of elements within the list structure may be accomplished by utilizing the `map()` higher-order function."
-- **Easy Analogies**: Use simple, real-world analogies to explain abstract concepts.
+- **Simple Words**: Everyday English over academic jargon.
+- **Short Sentences**: Direct and punchy (under 15–20 words where possible). One clear thought per sentence.
+- **Short Paragraphs**: Maximum 2 to 3 sentences per paragraph (no walls of text).
+- **Active Voice**: Be direct and instructional.
+- **Mental Models & Analogies**: Ground abstract concepts in concrete real-world metaphors (e.g. Bank Teller vs Buzzer, Juggler for concurrency).
 
 ---
 
-## 2. Standard Note Template
+## 2. Standard Note Templates
 
-When writing a note file in `Learning/` (e.g., `Learning/<topic>/<concept>.md`), follow this structure:
-
+### A. DSA Pattern Notes Template (`Learning/DSA/<pattern>.md`)
 ````markdown
-# [Concept / Topic Name]
+# Pattern XX: [Pattern Name]
+
+> One-sentence definition explaining how this pattern reduces time/space complexity.
+
+## 1. Key Takeaways (TL;DR)
+- 3–4 bullet points of core facts.
+
+## 2. Recognition Triggers (When to Use)
+- High-frequency problem keywords that signal this pattern.
+- Brute force vs pattern comparison.
+
+## 3. Visual Mechanisms
+- ASCII diagram showing pointer movements, state expansion/shrinking, or tree traversal.
+
+## 4. Reusable TypeScript / JavaScript Template
+```typescript
+// 10-15 line generic boilerplate template
+```
+
+## 5. Canonical Problem Walkthrough
+- Complete optimized solution for 1 representative LeetCode Medium.
+
+## 6. JavaScript / TypeScript Specific Gotchas
+- V8 engine quirks, sorting behaviors, integer division, or memory traps.
+
+## 7. Complexity Analysis
+| Metric | Complexity | Why |
+| :--- | :--- | :--- |
+````
+
+### B. System & Technology Concept Template (`Learning/<topic>/<concept>.md`)
+````markdown
+# [Concept Name]
 
 > One simple sentence explaining what this is.
 
 ## 1. Key Takeaways (TL;DR)
-- Main point 1 in simple words
-- Main point 2 in simple words
-- Main point 3 in simple words
+- Main point 1, 2, 3 in plain words.
 
 ## 2. Why & When to Use
-- **Why:** Benefit or problem it solves.
-- **When:** Typical scenario where you should use it.
+- **Why:** Benefit and problem it solves at scale.
+- **When:** Typical production scenario.
 
 ## 3. Minimal Example
 ```<language>
-// Short, clean, working example
-// Only include the essential code
+// Clean, working example with zero boilerplate
 ```
 
-## 4. Common Mistakes & Tips
-- **Watch out:** Common beginner mistake and how to fix it.
-- **Tip:** Quick best practice.
+## 4. Common Mistakes & Pitfalls
+- Production traps, memory leaks, and anti-patterns.
 
-## 5. Quick Reference
-| Feature / Syntax | What It Does |
-| :--- | :--- |
-| `example()` | Short explanation |
+## 5. Quick Reference Table
 ````
 
 ---
 
-## 3. Formatting & Organization
-
-- **Scannable Layout**: Use bullet points, bold keywords, and tables instead of long narrative paragraphs.
-- **Clean Code Blocks**: Keep code snippets minimal, free of boilerplate, and clearly commented on crucial lines.
-- **File Naming**: Use lowercase hyphenated file names (e.g., `async-await.md`, `binary-search.md`, `git-basics.md`).
-- **Focus on Practical Use**: Prioritize "how it works" and "how to use it" over deep theoretical background unless requested.
+## 3. Formatting & Linking Rules
+- **Relative Markdown Links Only:** Always use relative paths (`[Title](../Path/file.md)`) for native Obsidian and GitHub compatibility. Never use `file:///`.
+- **Roadmap Integration:** Every new topic must be registered in the master tracker at [`Learning/FAANG-Roadmap.md`](../Learning/FAANG-Roadmap.md).
