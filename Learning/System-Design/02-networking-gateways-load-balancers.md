@@ -70,13 +70,13 @@ A **Load Balancer (LB)** distributes incoming network traffic across a cluster o
 
 ### Layer 4 (Transport Layer) vs Layer 7 (Application Layer)
 
-| Feature | L4 Load Balancer (TCP / UDP) | L7 Load Balancer (HTTP / HTTPS) |
-| :--- | :--- | :--- |
-| **OSI Layer** | Layer 4 (Transport) | Layer 7 (Application) |
-| **Inspection Depth** | Inspects IP address & Port only | Inspects HTTP headers, cookies, URL path, payload |
-| **Routing Capability** | IP/Port routing only | Content-based routing (`/api/v1/checkout` vs `/static/*`) |
-| **Performance** | Ultra-fast (no payload decryption/parsing) | Slightly higher CPU overhead (decrypts TLS & parses HTTP) |
-| **Popular Tech** | AWS NLB (Network LB), HAProxy L4, IPVS | AWS ALB (Application LB), Nginx, Envoy, Traefik |
+| Feature                | L4 Load Balancer (TCP / UDP)               | L7 Load Balancer (HTTP / HTTPS)                           |
+| :--------------------- | :----------------------------------------- | :-------------------------------------------------------- |
+| **OSI Layer**          | Layer 4 (Transport)                        | Layer 7 (Application)                                     |
+| **Inspection Depth**   | Inspects IP address & Port only            | Inspects HTTP headers, cookies, URL path, payload         |
+| **Routing Capability** | IP/Port routing only                       | Content-based routing (`/api/v1/checkout` vs `/static/*`) |
+| **Performance**        | Ultra-fast (no payload decryption/parsing) | Slightly higher CPU overhead (decrypts TLS & parses HTTP) |
+| **Popular Tech**       | AWS NLB (Network LB), HAProxy L4, IPVS     | AWS ALB (Application LB), Nginx, Envoy, Traefik           |
 
 ### Balancing Algorithms for SDE-1
 1. **Round Robin:** Requests are distributed sequentially across servers ($1 \rightarrow 2 \rightarrow 3 \rightarrow 1$).

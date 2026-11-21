@@ -98,9 +98,36 @@
 
 ---
 
-## Day 6: System Design – Networking, Gateways & Load Balancers (In Progress Nov 21)
+## Day 6: System Design – Networking, Gateways & Load Balancers (Completed Nov 21)
 
-*(Pending your answers to today's 3 checkpoint questions:)*
-1. **Question 1:** Trace the Request-Response lifecycle: What happens under the hood between a user typing `https://api.example.com/checkout` in their browser and the Express.js server receiving the request?
-2. **Question 2:** What is the difference between an L4 Load Balancer and an L7 Load Balancer, and which one would you place in front of microservices that require path-based routing?
-3. **Question 3:** What makes an API service "stateless", and how do you handle user login sessions in a horizontally scaled cluster without using sticky sessions?
+### Question 1: Between a user hitting Enter on `https://api.example.com/checkout` and Express receiving the request, what are the 3 major networking handshakes / lookups that happen first?
+* **Your Answer:** *"TCP, TLS, https Handshake"*
+* **Evaluation:** 🟡 **Partially Correct (Missed the First Step: DNS)**
+* **Feedback & The 3 Ordered Phases:**
+  1. **DNS Resolution (Domain $\rightarrow$ IP):** The browser queries recursive DNS resolvers to translate `api.example.com` into an IP address (`198.51.100.1`). Without an IP, the OS cannot send network packets.
+  2. **TCP 3-Way Handshake (Connection Establishment):** The client sends `SYN`, the server responds with `SYN-ACK`, and the client sends `ACK` to establish a reliable byte stream.
+  3. **TLS Handshake (HTTPS Encryption):** The client validates the server's SSL certificate and negotiates a symmetric AES session key to encrypt the HTTP stream. (Note: "HTTPS handshake" is another name for TLS).
+
+---
+
+### Question 2: If your backend needs to route `/api/users` to Server Pool A and `/api/payments` to Server Pool B, can an L4 Load Balancer do this? Why or why not?
+* **Your Answer:** *"i dont know"*
+* **Evaluation:** 📖 **Learning Moment (The Core Distinction)**
+* **The Rule to Remember:**
+  * **Answer: NO.** An L4 Load Balancer **cannot** route by path.
+  * **Why?** L4 = Layer 4 (Transport layer - TCP/UDP). An L4 balancer only looks at the **IP Address and Port** (e.g. `10.0.0.1:443`). It has no visibility into what is inside the payload. It cannot read the HTTP URL, headers, or cookies.
+  * **What you need:** An **L7 Load Balancer (Application layer - HTTP/HTTPS)**, such as AWS ALB, Nginx, or an API Gateway. L7 decrypts TLS, parses the HTTP path (`/api/users`), and routes traffic intelligently to specific service pools.
+
+---
+
+### Question 3: A junior engineer stores user avatars in the local `/uploads` directory on an Express.js server. What breaks when your system scales from 1 server to 4 servers behind a Load Balancer? How do you fix it?
+* **Your Answer:** *"if the request goes to other than the server which store the file it will have no data as we have mulitple server and load balancer is distributing the request it can happen, instead we can store in the s3 bucket and put the link/url of it in the centralized db"*
+* **Evaluation:** ✅ **Passed (100% Correct – Textbook SDE-1 Answer!)**
+* **Why this is great:** You precisely pinpointed the failure mode (Load Balancer routes subsequent image fetch requests to another instance, leading to HTTP 404 errors) and identified the industry-standard fix: decoupling state from the application server by streaming uploads directly to Amazon S3 / Cloudflare R2 and persisting the image URL in the database.
+
+---
+
+## Day 7: Week 1 Diagnostic Assessment & Weak Area Review (Active Nov 22)
+
+*(See [Learning/Week-1-Revision-and-Assessment.md](../../Learning/Week-1-Revision-and-Assessment.md) for the complete weak area analysis and final 5-question test)*
+
